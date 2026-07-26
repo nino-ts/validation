@@ -35,9 +35,22 @@
     "version": "0.0.1",
     "types": "./dist/src/index.d.ts",
     "files": [
+        "LICENSE",
+        "README.md",
         "dist",
+        "dist/src/index.d.ts",
+        "index.ts",
+        "jsr.json",
         "src",
-        "index.ts"
+        "src/index.ts"
     ],
-    "license": "MIT"
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nino-ts/validation.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nino-ts/validation/issues"
+    },
+    "homepage": "https://github.com/nino-ts/validation#readme"
 }
