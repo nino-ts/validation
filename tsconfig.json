@@ -2,12 +2,11 @@
     "compilerOptions": {
         "allowImportingTsExtensions": false,
         "allowJs": false,
-        "baseUrl": ".",
-        "ignoreDeprecations": "6.0",
 
         "jsx": "react-jsx",
         // Environment setup & latest features
         "lib": ["esnext", "dom"],
+        "types": ["bun"],
         "module": "esnext",
         "moduleDetection": "force",
 
