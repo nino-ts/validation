@@ -97,7 +97,7 @@ export class Translator {
     public translate(key: keyof ValidationMessages, options?: TranslateOptions): string {
         const locale = options?.locale ?? this.currentLocale;
         const attributes = options?.attributes ?? {};
-        const messages = locales[locale] ?? locales[defaultLocale];
+        const messages = this.resolveMessages(locale);
         const template = messages[key] ?? messages.required;
 
         return this.replacePlaceholders(template, attributes);
@@ -132,7 +132,18 @@ export class Translator {
      */
     public getMessages(locale?: Locale): ValidationMessages {
         const targetLocale = locale ?? this.currentLocale;
-        return locales[targetLocale] ?? locales[defaultLocale];
+        return this.resolveMessages(targetLocale);
+    }
+
+    /**
+     * Resolve messages for a locale, falling back to the default locale.
+     */
+    private resolveMessages(locale: Locale): ValidationMessages {
+        const messages = locales[locale] ?? locales[defaultLocale];
+        if (messages === undefined) {
+            throw new Error(`Missing validation messages for locale: ${locale}`);
+        }
+        return messages;
     }
 
     /**
