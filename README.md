@@ -483,4 +483,4 @@ MIT © Ninots Framework
 
 ## Publish note (Sprint 14)
 
-Published independently at `0.0.1` (npm + JSR). Zero cross-package `@ninots/*` deps.
+Published independently at `0.0.1` (npm only). Zero cross-package `@ninots/*` deps.
